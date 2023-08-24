@@ -1,0 +1,19 @@
+#:kivy 1.10.0
+
+<DeckOptions>:
+    orientation: 'vertical'
+    TextInput:
+        id: name_deck
+        hint_text: 'Name Deck'
+    Spinner:
+        id: deck_list
+        values: []
+    Button: 
+        text: 'Load Deck'
+        on_press: root.load_deck()
+    Button: 
+        text: 'Save Deck'
+        on_press: root.save_deck()
+    Button: 
+        text: 'Delete Deck'
+        on_press: [root.decks.ids[display].clear_widgets() for display in root.decks.ids]

@@ -1,0 +1,22 @@
+#:kivy 1.10.0
+
+<CardViewer>:
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 100, 0, 0, .5
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    Image:
+        size_hint: 1, .6
+        source: root.viewing.art
+        allow_stretch: True
+        keep_ratio: False
+    ScrollView:
+        size_hint: 1, .4
+        Label:
+            size_hint_y: None
+            height: self.texture_size[1]
+            text_size: self.width, None
+            text: root.viewing.effect

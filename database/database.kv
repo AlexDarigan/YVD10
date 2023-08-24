@@ -1,0 +1,24 @@
+#:kivy 1.10.0
+
+<DataBase>:
+    DataBaseSearchInput:
+        id: database_searchinput
+        size_hint: .2, 1
+        pos_hint: {'x': 0.8, 'y': 0}
+    DataBaseSearchOutput:
+        id: database_searchoutput
+        size_hint: .6, 1
+        pos_hint: {'x': 0.2, 'y': 0}
+    CardViewer:
+        id: card_viewer
+        size_hint: .2, .7
+        pos_hint: {'x': 0, 'y': 0.3}
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: .2, .3
+        TextInput:
+            id: csv_address
+            hint_text: 'Enter CSV File Address'
+        Button:
+            text: 'Add from CSV'
+            on_press: root.add_from_csv()

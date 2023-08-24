@@ -1,0 +1,69 @@
+#:kivy 1.10.0
+
+<SearchInput>:
+    BoxLayout:
+        size_hint_y: .3
+        pos_hint: {'x': 0, 'y': 0.7}
+        orientation: 'vertical'
+        TextInput:
+            id: title
+            hint_text: 'Name'
+        TextInput:
+            id: pack
+            hint_text: 'Pack'
+        TextInput:
+            id: desc
+            hint_text: 'Effect'
+    GridLayout:
+        size_hint_y: .7
+        pos_hint: {'x': 0, 'y': 0}
+        cols: 2
+        rows: 8
+        TextInput:
+            id: max_level
+            hint_text: 'MAX Level'
+        TextInput:
+            id: min_level
+            hint_text: 'MIN Level'
+        TextInput:
+            id: max_atk
+            hint_text: 'MAX Attack'
+        TextInput:
+            id: min_atk
+            hint_text: 'MIN Attack'
+        TextInput:
+            id: max_def
+            hint_text: 'MAX Defense'
+        TextInput:
+            id: min_def
+            hint_text: 'MIN Defense'
+        Spinner:
+            id: main
+            text: ''
+            values: ['Monster', 'Spell', 'Trap', '']
+        Spinner:
+            id: sub
+            text: ''
+            values: ['Effect', 'Normal', '']
+        Spinner:
+            id: color
+            text: ''
+            values: ['Synchro', 'Link', '']
+        Spinner:
+            id: element
+            text: ''
+            values: ['Fire', 'Water', 'Earth', '']
+        Spinner:
+            id: tribe
+            text: ''
+            values: ['Beast-Warrior', 'Machine', 'Divine-Beast', '']
+        Spinner:
+            id: special
+            text: ''
+            values: ['Gemini', 'Spirit', '']
+        Button:
+            text: 'Search'
+            on_press: root.get_search_results()
+        Button: 
+            text: 'Clear'
+            on_press: root.ids.results_display.clear_widgets()

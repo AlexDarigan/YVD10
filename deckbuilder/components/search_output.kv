@@ -1,0 +1,29 @@
+#:kivy 1.10.0
+
+<SearchOutput>:
+    BoxLayout:
+        size_hint: 1, .1
+        pos_hint: {'x': 0, 'y': 0.9}
+        Button: 
+            text: '<<<'
+            on_press: root.show_previous_page()
+        Label: 
+            text: str(root.card_index // 9) + '/' + str(root.page_count)
+        Button: 
+            text: '>>>'
+            on_press: root.show_next_page()
+    GridLayout:
+        id: results_display
+        size_hint: 1, .9
+        pos_hint: {'x': 0, 'y': 0}
+        cols: 3
+        rows: 3
+        col_default_width: self.width / 3
+        row_default_height: self.height / 3
+        canvas:
+            Color:
+                rgba: 1, 30, 0, .5
+            Rectangle:
+                size: self.size
+                pos: self.pos
+ 

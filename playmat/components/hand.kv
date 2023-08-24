@@ -1,0 +1,30 @@
+#:kivy 1.10.0
+
+
+
+<Hand>:
+    size_hint: 0, .15
+    padding: 0
+    spacing: 0
+    pos_hint: {'center_x': root.hand_x, 'y': -0.05}
+    canvas:
+        Color:
+            rgba: 100, 0, 0, 0.5
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+# <HandOld>:
+#     spacing: root.card_spacing * len(self.children)
+#     size_hint: 0, .15
+#     pos_hint: {'center_x': root.hand_x, 'y': -0.05}
+#     cols: 0
+#     rows: 1
+#     row_default_height: self.height
+#     row_force_default: True
+#     canvas:
+#         Color:
+#             rgba: 100, 0, 0, 0.5
+#         Rectangle:
+#             size: self.size
+#             pos: self.pos

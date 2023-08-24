@@ -1,0 +1,82 @@
+#:kivy 1.10.0
+
+<PlayMat>:
+    canvas.before:
+        Rectangle:
+            source: 'images/wood.jpeg'
+            size: self.size
+            pos: self.pos
+    CardViewer:
+        id: card_viewer
+        size_hint: .2, .7
+        pos_hint: {'x': 0, 'y': 0.3}
+    CardZoneLayout:
+        id: my_support_zone
+        size_hint: .4, .19
+        pos_hint: {'x': 0.3, 'y': 0.01}
+    CardZoneLayout:
+        id: my_monster_zones
+        size_hint: .4, .19
+        pos_hint: {'x': 0.3, 'y': .21}
+    CardZoneLayout:
+        size_hint: .4, .19
+        pos_hint: {'x': 0.3, 'y': .8}
+    CardZoneLayout:
+        size_hint: .4, .19
+        pos_hint: {'x': 0.3, 'y': .6}
+    CardZone: 
+        id: extra_zone_one
+        size_hint: .08, .18
+        pos_hint: {'x': 0.54, 'y': .41}
+    CardZone:
+        id: extra_zone_zero
+        size_hint: .08, .18
+        pos_hint: {'x': .38, 'y': .41}
+    Button:
+        id: deck
+        background_normal: 'images/basicback.jpg'
+        size_hint: .08, .2
+        pos_hint: {'x': 0.71, 'y': 0.01}
+        on_press: if self.last_touch.button == 'left': root.ids.player_hand.draw()
+    Button:
+        id: my_discard
+        background_normal: 'images/basicback.jpg'
+        size_hint: .08, .2
+        pos_hint: {'x': 0.71, 'y': 0.22}
+    Button:
+        id: extra_deck
+        background_normal: 'images/basicback.jpg'
+        size_hint: .08, .2
+        pos_hint: {'x': 0.21, 'y': 0.01}
+    Image:
+        size_hint: .08, .2
+        pos_hint: {'x': 0.21, 'y': 0.22}
+        source: 'images/basicback.jpg'
+    Image:
+        size_hint: .08, .2
+        pos_hint: {'x': 0.21, 'y': 0.79}
+        source: 'images/basicback.jpg'
+    Image:
+        size_hint: .08, .2
+        pos_hint: {'x': 0.21, 'y': 0.58}
+        source: 'images/basicback.jpg'
+    Image:
+        size_hint: .08, .2
+        pos_hint: {'x': 0.71, 'y': 0.79}
+        source: 'images/basicback.jpg'
+    Image:
+        size_hint: .08, .2
+        pos_hint: {'x': 0.71, 'y': 0.58}
+        source: 'images/basicback.jpg'
+    Chat:
+        id: chat
+        size_hint: .2, 1
+        pos_hint: {'x': .8, 'y': 0}
+    Hand:
+        id: player_hand
+        
+
+
+
+
+    

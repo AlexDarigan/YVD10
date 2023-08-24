@@ -1,0 +1,51 @@
+#:kivy 1.10.0
+
+<DeckDisplays>:
+    GridLayout:
+        id: main_deck
+        padding: 2, 2
+        spacing: 2, 2
+        size_hint: 1, .8
+        pos_hint: {'x': 0, 'y': 0.2}
+        col_default_width: self.width / 10 - 4
+        row_default_height: self.height / 6 - 4
+        rows: 6
+        cols: 10
+        canvas:
+            Color:
+                rgba: 100, 0, 0, .8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        id: extra_deck
+        padding: 2, 2
+        spacing: 2, 2
+        size_hint: 1, .1
+        pos_hint: {'x': 0, 'y': 0.1}
+        col_default_width: self.width / 15 - 4
+        rows: 1
+        cols: 15
+        canvas: 
+            Color: 
+                rgba: 0, 0, 100, .5
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        id: side_deck
+        padding: 2, 2
+        spacing: 2, 2
+        size_hint: 1, .1
+        pos_hint: {'x': 0, 'y': 0}
+        rows: 1
+        cols: 15
+        col_default_width: self.width / 15 - 4
+        canvas: 
+            Color: 
+                rgba: 100, 0, 0, .8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+            

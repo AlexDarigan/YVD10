@@ -1,0 +1,46 @@
+#:kivy 1.10.0
+
+<Session>:
+    title: 'Connect to Game'
+    title_align: 'center'
+    size_hint: .2, .4
+    # auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: log
+            size_hint: 1, .25
+            text: 
+        ProgressBar:
+            id: signal
+            max: 100
+            value: 0
+        BoxLayout:
+            size_hint: 1, .5
+            orientation:
+            Label:
+                size_hint: .3, 1
+                text: 'IP :'
+            TextInput:
+                id: ip
+                size_hint: .7, .9
+                text: '127.0.0.1'
+        BoxLayout:
+            size_hint: 1, .5
+            Label:
+                size_hint: .3, 1
+                text: 'PORT :'
+            TextInput: 
+                id: port
+                size_hint: .7, .9
+                text: '5000'
+        BoxLayout:
+            size_hint: 1, .5
+            Button:
+                size_hint: 1, .9
+                text: 'Connect'
+                on_press: root.connect()
+            Button:
+                size_hint: 1, .9
+                text: 'Listen'
+                on_press: root.bind_host()

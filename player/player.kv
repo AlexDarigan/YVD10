@@ -1,0 +1,40 @@
+#:kivy 1.10.0
+
+<ContextMenu>:
+    title: 'Content Menu'
+    title_align: 'center'
+    size_hint: None, None
+    size: 400, 400
+    BoxLayout:
+        Image:
+            source: root.art
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: 'Summon'
+                on_press: app.root.ids.controller.get_screen('PLAYMAT').PlayerOne.summon_or_play_card()
+            Button:
+                text: 'Set'
+            Button:
+                text: 'Discard'
+                on_press: app.root.ids.controller.get_screen('PLAYMAT').PlayerOne.send_to_area('graveyard')
+            Button: 
+                text: 'Banish'
+                on_press: app.root.ids.controller.get_screen('PLAYMAT').PlayerOne.send_to_area('banish')
+            Button:
+                text: 'Add to Deck (Top)'
+                on_press: app.root.ids.controller.get_screen('PLAYMAT').PlayerOne.send_to_area('topdeck')
+            Button:
+                text: 'Add to Deck (Bottom)'
+                on_press: app.root.ids.controller.get_screen('PLAYMAT').PlayerOne.send_to_area('bottomdeck')
+            Button: 
+                text: 'Reveal'
+            Button: 
+                text: 'Stop Revealing'
+
+<ZoneMenu>:
+    title: 'Choose Zone'
+    title_align: 'center'
+    size_hint: .6, .3
+    BoxLayout:
+        id: choices

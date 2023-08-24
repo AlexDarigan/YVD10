@@ -1,0 +1,58 @@
+#:kivy 1.10.0
+
+<DataBaseSearchInput>:
+    canvas:
+        Color:
+            rgba: 100, 0, 0, 1
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    orientation: 'vertical'
+    TextInput:
+        id: title
+        hint_text: 'Name'
+    TextInput:
+        id: pack
+        hint_text: 'Set'
+    TextInput:
+        id: min_level
+        hint_text: 'MIN Level'
+    TextInput:
+        id: max_level
+        hint_text: 'MAX Level'
+    TextInput:
+        id: min_atk
+        hint_text: 'MIN Attack'
+    TextInput:
+        id: max_atk
+        hint_text: 'MAX Attack'
+    TextInput:
+        id: min_def
+        hint_text: 'MIN Defense'
+    TextInput:
+        id: max_def
+        hint_text: 'MAX Defense'
+    TextInput:
+        id: desc
+        hint_text: 'Effect'
+    Spinner:
+        id: main
+        values: ['Monster', 'Spell', 'Trap', '']
+    Spinner:
+        id: sub
+        values: ['Effect', 'Normal', '']
+    Spinner:
+        id: color
+        values: ['Synchro', 'Link', '']
+    Spinner:
+        id: element
+        values: ['Fire', 'Water', 'Earth', '']
+    Spinner:
+        id: tribe
+        values: ['Beast-Warrior', 'Machine', 'Divine-Beast', '']
+    Spinner:
+        id: special
+        values: ['Gemini', 'Spirit', '']
+    Button:
+        text: 'Search'
+        on_press: root.search_and_send_to_output()

@@ -1,0 +1,29 @@
+#:kivy 1.10.0
+
+<Master>:
+    BoxLayout:
+        size_hint_y: .05
+        pos_hint: {'x': 0, 'y': 0.95}
+        Button: 
+            text: 'DECKBUILDER'
+            on_press: root.ids.controller.current = 'DECKBUILDER'
+        Button:
+            text: 'PLAYMAT'
+            on_press: root.ids.controller.current = 'PLAYMAT'
+        Button: 
+            text: 'DATABASE'
+            on_press: root.ids.controller.current = 'DATABASE'
+        Button:
+            text: 'CONNECT POPUP'
+            on_press: app.connect()
+        Button: 
+            text: 'SETTINGS'
+    ScreenManager:
+        id: controller
+        size_hint: 1, .95
+        DeckBuilder:
+            name: 'DECKBUILDER'
+        PlayMat:
+            name: 'PLAYMAT'
+        DataBase:
+            name: 'DATABASE'

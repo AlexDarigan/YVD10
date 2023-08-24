@@ -1,0 +1,62 @@
+#:kivy 1.10.0
+
+<Chat>:
+    orientation: 'vertical'
+    spacing: -2
+    Label: 
+        text: '8000'
+        size_hint: 1, .25
+        canvas.before:
+            Color:
+                rgba: 0, 0, 30, .8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Label: 
+        text: 'OPPONENT'
+        size_hint: 1, .25
+        canvas.before:
+            Color:
+                rgba: 30, 0, 0, .8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Label:
+        canvas:
+            Rectangle:
+                source: 'images/solo.jpg'
+                size: self.size
+                pos: self.pos
+    TextInput:
+        id: message_output
+        readonly: True
+    TextInput:
+        multiline: False
+        id: message_input
+        text: 'INPUT'
+        size_hint: 1, .2
+        on_text_validate: app.session.send()
+    Label:
+        canvas:
+            Rectangle:
+                source: 'images/solo.jpg'
+                size: self.size
+                pos: self.pos
+    Label:
+        text: 'PLAYER'
+        size_hint: 1, .25
+        canvas.before: 
+            Color:
+                rgba: 30, 0, 0, .8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    Label:
+        text: '8000'
+        size_hint: 1, .25
+        canvas.before:
+            Color:
+                rgba: 0, 0, 30, .7
+            Rectangle:
+                size: self.size
+                pos: self.pos

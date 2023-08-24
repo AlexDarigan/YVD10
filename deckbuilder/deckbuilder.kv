@@ -1,0 +1,23 @@
+#:kivy 1.10.0
+
+<DeckBuilder>:
+    CardViewer:
+        id: card_viewer
+        size_hint: .2, .7
+        pos_hint: {'x': 0, 'y': .3}
+    DeckOptions:
+        id: deck_options
+        size_hint: .2, .3
+        pos_hint: {'x': 0, 'y': 0}
+    SearchInput:
+        size_hint: .2, .5
+        pos_hint: {'x': .8, 'y': .5}
+    SearchOutput:
+        id: search_output
+        size_hint: .2, .5
+        pos_hint: {'x': .8, 'y': 0}
+    DeckDisplays:
+        id: deck_displays
+        size_hint: .6, 1
+        pos_hint: {'x': .2, 'y': 0}
+   
